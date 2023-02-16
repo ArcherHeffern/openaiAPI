@@ -4,7 +4,9 @@ import openai
 from dotenv import load_dotenv
 
 load_dotenv()
+
 # Set up the OpenAI API client
+# get api key at: https://platform.openai.com/account/api-keys
 openai.api_key = os.getenv('API_KEY')
 
 # test for an API key
