@@ -15,8 +15,8 @@ if openai.api_key=="YOUR_API_KEY":
     sys.exit()
 
 # Set up the model and prompt
-MODEL_ENGINE = "text-davinci-003"
-prompt = input("Enter a prompt: ")
+MODEL_ENGINE = "text-ada-001"
+prompt = f"Give me a list of 10 resources with urls to improve at {input('What do you want to learn more about: ')}."
 
 # Generate a response
 completion = openai.Completion.create(
@@ -25,7 +25,7 @@ completion = openai.Completion.create(
     max_tokens=1024,
     n=1,
     stop=None,
-    temperature=0.5,
+    temperature=0,
 )
 
 response = completion.choices[0].text
